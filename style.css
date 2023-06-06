@@ -1,0 +1,36 @@
+.haut_gauche {
+    margin: 15% 0 0 35%;
+    height: 100vh;
+    transition-property: margin;
+    transition-delay: 1s;
+    transition-duration: 2s;
+}
+
+.haut_gauche:hover {
+    margin: 5px 0 0 5px;
+}
+
+.haut_gauche img {
+    transition-property: width, rotate;
+    transition-delay: 1s;
+    transition-duration: 2s;
+}
+
+.haut_gauche:hover img {
+    width: 5%;
+    rotate: 360deg;
+}
+
+div img {
+    width: 45%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: cornflowerblue;
+    padding-bottom: 1em;
+}
