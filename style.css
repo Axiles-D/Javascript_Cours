@@ -1,4 +1,4 @@
-.haut_gauche {
+/* .haut_gauche {
     margin: 15% 0 0 35%;
     height: 100vh;
     transition-property: margin;
@@ -33,4 +33,31 @@ div img {
     text-align: center;
     background-color: cornflowerblue;
     padding-bottom: 1em;
+} */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 208, 0);
+}
+
+#containMot {
+    text-align: center;
+}
+
+#containImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#containButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#containButton button {
+    padding: 0 2em;
 }
