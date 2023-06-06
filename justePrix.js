@@ -6,7 +6,6 @@ const prix = ["Mon respect", "Un bisou", "une Tesla ! (modèle réduit)", "Le dr
 const randomPrice = Math.floor(Math.random() * prix.length);
 const valider = document.querySelector("#valider");
 const container = document.querySelector(".container");
-let isWin = false;
 let compteur = 7;
 
 console.log(nbrRandom);
@@ -38,7 +37,6 @@ function action() {
         result.innerHTML += `<p>Votre prix est : ${prix[randomPrice]}</p>`
         devine.disabled = true
         container.style["background-color"] = "green";
-        isWin = true;
     }
     if (compteur === 0) {
         result.innerHTML = "<p>Vous avez Perdu !</p>"
