@@ -13,22 +13,22 @@ console.log(nbrRandom);
 function action() {
 
     if (devine.value > nbrRandom) {
-        container.style["background-color"] = "cornflowerblue";
+        container.style.backgroundColor = "cornflowerblue";
         result.innerHTML = "<p>Plus petit !</p>";
         compteur--;
         result.innerHTML += `<p>il vous reste ${compteur} essaie(s)</p>`;
         if ((devine.value - nbrRandom < 10) && (devine.value - nbrRandom > -10)) {
-            container.style["background-color"] = "orange";
+            container.style.backgroundColor = "orange";
             result.innerHTML += "<p>Vous y êtes presque !</p>"
         }
         devine.value = "";
     } else if (devine.value < nbrRandom) {
-        container.style["background-color"] = "cornflowerblue";
+        container.style.backgroundColor = "cornflowerblue";
         result.innerHTML = "<p>Plus grand !</p>";
         compteur--;
         result.innerHTML += `<p>il vous reste ${compteur} essaie(s)</p>`;
         if ((devine.value - nbrRandom < 10) && (devine.value - nbrRandom > -10)) {
-            container.style["background-color"] = "orange";
+            container.style.backgroundColor = "orange";
             result.innerHTML += "<p>Vous y êtes presque !</p>"
         }
         devine.value = "";
@@ -36,12 +36,12 @@ function action() {
         result.innerHTML = "<p>Vous avez gagné !</p>";
         result.innerHTML += `<p>Votre prix est : ${prix[randomPrice]}</p>`
         devine.disabled = true
-        container.style["background-color"] = "green";
+        container.style.backgroundColor = "green";
     }
     if (compteur === 0) {
         result.innerHTML = "<p>Vous avez Perdu !</p>"
         devine.disabled = true
-        container.style["background-color"] = "red"
+        container.style.backgroundColor = "red"
         valider.disabled = true
     }
 }
