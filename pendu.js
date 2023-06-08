@@ -76,26 +76,26 @@ for (let i = 0; i < button.length; i++) {
         //================================================================
         //* Section avancement du pendu + défaite
         if (islose == 1) {
-            pendu.style.backgroundPosition = "16.5% 50%";
+            pendu.style.backgroundPosition = "14.3% 50%";
         }
         if (islose == 2) {
-            pendu.style.backgroundPosition = "30.5% 50%";
+            pendu.style.backgroundPosition = "28.6% 50%";
         }
         if (islose == 3) {
-            pendu.style.backgroundPosition = "44.5% 50%";
+            pendu.style.backgroundPosition = "42.9% 50%";
         }
         if (islose == 4) {
-            pendu.style.backgroundPosition = "58% 50%";
+            pendu.style.backgroundPosition = "57.1% 50%";
         }
         if (islose == 5) {
-            pendu.style.backgroundPosition = "71% 50%";
+            pendu.style.backgroundPosition = "71.4% 50%";
         }
         if (islose == 6) {
-            pendu.style.backgroundPosition = "85% 50%";
+            pendu.style.backgroundPosition = "85.7% 50%";
         }
         if (islose == 7) { // Vérification d'une possible défaite
             result.innerHTML = `<p>Vous avez perdu !</p>`;
-            pendu.style.backgroundPosition = "98% 50%";
+            pendu.style.backgroundPosition = "100% 50%";
             for (let j = 0; j < button.length; j++) {
                 button[j].disabled = true;
             }

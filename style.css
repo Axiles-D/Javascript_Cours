@@ -102,13 +102,10 @@ header {
 }
 
 #pendu {
-    height: 100%;
-    width: 20%;
-    padding: 3em 1.5em 3em 1.5em;
+    height: 97px;
+    width: 108px;
+    padding: 97px 108px;
 
-    background-image: url(./Le-Pendu-one-line-removebg-preview.png);
-    background-size: 2800px 350px;
-    background-position: left ;
-    background-position-x: 3%;
-    background-position-y: 50%;
+    background-image: url(./spritesheet.png);
+    background-size: cover;
 }
