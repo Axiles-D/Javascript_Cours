@@ -66,7 +66,7 @@ for (let i = 0; i < button.length; i++) {
             if (iswin == mot.length) { // Vérification d'une possible victoire
                 result.innerHTML = `<p>Vous avez gagné !</p>`;
 
-                for (let j = 0; j < button.length; j++) {
+                for (let j = 0; j < button.length; j++) { // Boucle pour désactiver les boutons
                     button[j].disabled = true;
                 }
                 containAgain.style.display = "flex"; // On fait apparaître le bouton recommencer
@@ -96,7 +96,8 @@ for (let i = 0; i < button.length; i++) {
         if (islose == 7) { // Vérification d'une possible défaite
             result.innerHTML = `<p>Vous avez perdu !</p>`;
             pendu.style.backgroundPosition = "100% 50%";
-            for (let j = 0; j < button.length; j++) {
+
+            for (let j = 0; j < button.length; j++) { // Boucle pour désactiver les boutons
                 button[j].disabled = true;
             }
         containAgain.style.display = "flex"; // On fait apparaître le bouton recommencer
