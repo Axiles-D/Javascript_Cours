@@ -35,6 +35,10 @@ div img {
     padding-bottom: 1em;
 } */
 
+body {
+    background-color: rgb(63, 59, 59);
+}
+
 header {
     display: flex;
     justify-content: space-around;
@@ -43,6 +47,10 @@ header {
 
 #containMot {
     text-align: center;
+}
+
+#guessWord {
+    font-size: 1.5em;
 }
 
 #containImage {
@@ -57,10 +65,50 @@ header {
     align-items: center;
     flex-wrap: wrap;
 
-    padding: 10% 10% 0 10%;
+    padding: 2% 10% 0 10%;
+    margin-top: 10%;
 }
 
 #containButton button {
     padding: 0 1.5em;
     font-size: 1.5em;
+}
+
+#result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+#globalContain {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 2em;
+}
+
+#containAgain {
+    margin-top: 1em;
+    justify-content: center;
+    display: none;
+}
+
+#containUsed {
+    padding: 1em;
+    border: solid 1px;
+    background-color: rgb(219, 219, 219);
+}
+
+#pendu {
+    height: 100%;
+    width: 20%;
+    padding: 3em 1.5em 3em 1.5em;
+
+    background-image: url(./Le-Pendu-one-line-removebg-preview.png);
+    background-size: 2800px 350px;
+    background-position: left ;
+    background-position-x: 3%;
+    background-position-y: 50%;
 }
