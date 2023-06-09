@@ -77,6 +77,8 @@ for (let i = 0; i < button.length; i++) {
                 // Vérification d'une possible victoire
                 result.innerHTML = `<p>Vous avez gagné !</p>`;
 
+                devine.disabled = true;
+                valider.disabled = true;
                 for (let j = 0; j < button.length; j++) {
                     // Boucle pour désactiver les boutons
                     button[j].disabled = true;
@@ -110,6 +112,8 @@ for (let i = 0; i < button.length; i++) {
             result.innerHTML = `<p>Vous avez perdu !</p>`;
             pendu.style.backgroundPosition = "100% 50%";
 
+            devine.disabled = true;
+            valider.disabled = true;
             for (let j = 0; j < button.length; j++) {
                 // Boucle pour désactiver les boutons
                 button[j].disabled = true;
@@ -145,6 +149,8 @@ function action() {
                 // Vérification d'une possible victoire
                 result.innerHTML = `<p>Vous avez gagné !</p>`;
 
+                devine.disabled = true;
+                valider.disabled = true;
                 for (let j = 0; j < button.length; j++) {
                     // Boucle pour désactiver les boutons
                     button[j].disabled = true;
@@ -180,6 +186,8 @@ function action() {
             result.innerHTML = `<p>Vous avez perdu !</p>`;
             pendu.style.backgroundPosition = "100% 50%";
 
+            devine.disabled = true;
+            valider.disabled = true;
             for (let j = 0; j < button.length; j++) {
                 // Boucle pour désactiver les boutons
                 button[j].disabled = true;
