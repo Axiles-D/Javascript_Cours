@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="pendu.js" defer></script>
-    </head>
-    <body>
-        <!-- <div class="haut_gauche">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="pendu.js" defer></script>
+</head>
+
+<body>
+    <!-- <div class="haut_gauche">
         <img src="gitkraken-logo-dark-sq2.png" alt="">
     </div>
     <p>
@@ -23,7 +25,7 @@
     </div> -->
 
     <!-- Juste prix -->
-        <!-- <div class="container">
+    <!-- <div class="container">
             <h1>
                 LE JUSTE PRIX
             </h1>
@@ -44,42 +46,32 @@
             </div>
         </div> -->
 
-
     <!-- Pendu -->
-    
+
     <header>
-        <div id="containMot">
-            <h2>
-                Mot à trouver :
-            </h2>
-            <p id="guessWord">
-                
-            </p>
-        </div>
         <div>
-            <h1>
-                LE JEU DU PENDU
-            </h1>
+            <h1>LE JEU DU PENDU</h1>
         </div>
     </header>
-    <div id="containImage">
-        
+    <div id="containImage"></div>
+
+    <div id="globalContain">
+        <div id="containUsed">
+            <p>Lettre(s) Utilisé(s) :</p>
+            <p id="usedLetter"></p>
+        </div>
+        <div id="containMot">
+            <h2>Mot à trouver :</h2>
+            <p id="guessWord"></p>
+        </div>
+        <div id="pendu"></div>
     </div>
 
-<div id="globalContain">
-    <div id="containUsed">
-        <p>
-            Lettre(s) Utilisé(s) :
-        </p>
-        <p id="usedLetter">
+    <div class="containDevine">
+        <input type="text" class="devine" maxlength="1" size="1"/>
 
-        </p>
+        <input type="button" value="Valider" id="valider"/>
     </div>
-
-    <div id="pendu">
-        
-    </div>
-</div>
 
 
     <div id="containButton">
@@ -111,14 +103,11 @@
         <button>N</button>
     </div>
 
-    <div id="result">
-        
-    </div>
+    <div id="result"></div>
 
     <div id="containAgain">
-        <input type="button" value="Recommencer" id="recommencer">
+        <input type="button" value="Recommencer" id="recommencer" />
     </div>
-    
+</body>
 
-    </body>
 </html>

@@ -2,7 +2,16 @@
 // Toutes mes variables/constentes
 
 //* Constentes pour mot aléatoire
-const tabbleMot = ["manga", "developpeur", "anticonstitutionnellement", "kinesitherapeute", "ballon", "code", "grandir", "peripateticienne"]
+const tabbleMot = [
+    "manga",
+    "developpeur",
+    "anticonstitutionnellement",
+    "kinesitherapeute",
+    "ballon",
+    "code",
+    "grandir",
+    "peripateticienne",
+];
 const motRandom = Math.floor(Math.random() * tabbleMot.length);
 const mot = tabbleMot[motRandom];
 
@@ -12,26 +21,31 @@ const etoile = [];
 
 //* Constentes qui récupère mes objets html
 const guessWord = document.querySelector("#guessWord");
-const result = document.querySelector("#result")
-const button = document.getElementsByTagName('button');
-const usedLetter = document.querySelector("#usedLetter")
+const result = document.querySelector("#result");
+const button = document.getElementsByTagName("button");
+const usedLetter = document.querySelector("#usedLetter");
 const tryAgain = document.querySelector("#recommencer");
-const containAgain = document.querySelector("#containAgain")
+const containAgain = document.querySelector("#containAgain");
 const pendu = document.querySelector("#pendu");
+const devine = document.querySelector(".devine");
+const valider = document.querySelector("#valider");
+
+//* Variables pour la confirmation par écrit
+let indices = [];
+let idx = caracter.indexOf(devine.value.toLowerCase());
 
 //* Variables victoire/défaite
-let iswin = 0
-let islose = 0
+let iswin = 0;
+let islose = 0;
 
 // ================================================================
 
 
 //* boucle qui affiche les étoiles en fonction de la longueur du mot
 for (let i = 0; i < mot.length; i++) {
-    etoile.push("* ")
+    etoile.push("* ");
 }
 guessWord.textContent = etoile.join("");
-
 
 //* Vérification
 console.log(mot);
@@ -39,23 +53,19 @@ console.log(etoile);
 console.log(caracter);
 
 
+
 //* Boucle qui analyse le bouton pressé
 for (let i = 0; i < button.length; i++) {
-
     button[i].addEventListener("click", function () {
-
-        let analyse = 0
+        let analyse = 0;
         caracter.forEach(function (lettre, index) {
-
             if (lettre === button[i].textContent.toLowerCase()) {
-
                 // remplacer l'étoile par la lettre qui correspond
                 guessWord.textContent = etoile.join(" ");
                 etoile[index] = lettre;
                 guessWord.textContent = etoile.join(" ");
 
                 iswin++;
-
             } else {
                 analyse++; // Ici la variable "analyse" permet d'utiliser le "isLose" malgrès le "forEach" en vérifiant si le bouton pressé correspond à au moins un caractère du mot
                 if (analyse == caracter.length) {
@@ -63,10 +73,12 @@ for (let i = 0; i < button.length; i++) {
                 }
             }
 
-            if (iswin == mot.length) { // Vérification d'une possible victoire
+            if (iswin == mot.length) {
+                // Vérification d'une possible victoire
                 result.innerHTML = `<p>Vous avez gagné !</p>`;
 
-                for (let j = 0; j < button.length; j++) { // Boucle pour désactiver les boutons
+                for (let j = 0; j < button.length; j++) {
+                    // Boucle pour désactiver les boutons
                     button[j].disabled = true;
                 }
                 containAgain.style.display = "flex"; // On fait apparaître le bouton recommencer
@@ -93,23 +105,113 @@ for (let i = 0; i < button.length; i++) {
         if (islose == 6) {
             pendu.style.backgroundPosition = "85.7% 50%";
         }
-        if (islose == 7) { // Vérification d'une possible défaite
+        if (islose == 7) {
+            // Vérification d'une possible défaite
             result.innerHTML = `<p>Vous avez perdu !</p>`;
             pendu.style.backgroundPosition = "100% 50%";
 
-            for (let j = 0; j < button.length; j++) { // Boucle pour désactiver les boutons
+            for (let j = 0; j < button.length; j++) {
+                // Boucle pour désactiver les boutons
                 button[j].disabled = true;
             }
-        containAgain.style.display = "flex"; // On fait apparaître le bouton recommencer
+            containAgain.style.display = "flex"; // On fait apparaître le bouton recommencer
         }
         //================================================================
 
         button[i].disabled = true; // Le bouton déjà pressé est désactivé.
 
         usedLetter.textContent += `${button[i].textContent} `; // Lettre rajouté dans les lettres déjà utilisés
-    })
-};
+    });
+}
 
-tryAgain.addEventListener('click', function () {
+
+
+//* Fonction qui analyse la lettre rentré
+function action() {
+    if (caracter.includes(devine.value.toLowerCase())) {
+        caracter.forEach(function (lettre, index) {
+
+            if (lettre === devine.value.toLowerCase()) {
+                // remplacer l'étoile par la lettre qui correspond
+
+                guessWord.textContent = etoile.join(" ");
+                etoile[index] = lettre;
+                guessWord.textContent = etoile.join(" ");
+
+                iswin++;
+            }
+
+            if (iswin == mot.length) {
+                // Vérification d'une possible victoire
+                result.innerHTML = `<p>Vous avez gagné !</p>`;
+
+                for (let j = 0; j < button.length; j++) {
+                    // Boucle pour désactiver les boutons
+                    button[j].disabled = true;
+                }
+                containAgain.style.display = "flex"; // On fait apparaître le bouton recommencer
+            }
+        });
+
+    }  else {
+        islose++;
+        //================================================================
+        //* Section avancement du pendu + défaite
+        if (islose == 1) {
+            pendu.style.backgroundPosition = "14.3% 50%";
+        }
+        if (islose == 2) {
+            pendu.style.backgroundPosition = "28.6% 50%";
+        }
+        if (islose == 3) {
+            pendu.style.backgroundPosition = "42.9% 50%";
+        }
+        if (islose == 4) {
+            pendu.style.backgroundPosition = "57.1% 50%";
+        }
+        if (islose == 5) {
+            pendu.style.backgroundPosition = "71.4% 50%";
+        }
+        if (islose == 6) {
+            pendu.style.backgroundPosition = "85.7% 50%";
+        }
+        if (islose == 7) {
+            // Vérification d'une possible défaite
+            result.innerHTML = `<p>Vous avez perdu !</p>`;
+            pendu.style.backgroundPosition = "100% 50%";
+
+            for (let j = 0; j < button.length; j++) {
+                // Boucle pour désactiver les boutons
+                button[j].disabled = true;
+            }
+            containAgain.style.display = "flex"; // On fait apparaître le bouton recommencer
+        }
+        //================================================================
+    }
+    usedLetter.textContent += `${devine.value.toUpperCase()} `; // Lettre rajouté dans les lettres déjà utilisés
+
+    for (let i = 0; i < button.length; i++) {
+        if (devine.value.toLowerCase() === button[i].textContent.toLowerCase()){
+            button[i].disabled = true;
+        }
+    }
+    devine.value = ""; // Vider l'input texte
+}
+
+
+
+//* Action du click ou du "enter"
+devine.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        action();
+    }
+});
+
+valider.addEventListener("click", function () {
+    action();
+});
+
+//* Bouton recommencer
+tryAgain.addEventListener("click", function () {
     window.location.reload();
 });

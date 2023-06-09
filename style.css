@@ -41,6 +41,7 @@ div img {
 
 body {
     background-color: rgb(63, 59, 59);
+    color: white;
 }
 
 header {
@@ -69,13 +70,15 @@ header {
     align-items: center;
     flex-wrap: wrap;
 
-    padding: 2% 10% 0 10%;
-    margin-top: 10%;
+    padding: 0% 10% 0 10%;
+    margin-top: 4%;
 }
 
 #containButton button {
     padding: 0 1.5em;
     font-size: 1.5em;
+    
+    
 }
 
 #result {
@@ -83,6 +86,7 @@ header {
     justify-content: center;
     align-items: center;
 
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -99,10 +103,16 @@ header {
     display: none;
 }
 
+#recommencer {
+    width: 10em;
+    height: 2em;
+    font-size: 1.5em;
+}
+
 #containUsed {
     padding: 1em;
     border: solid 1px;
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(68, 68, 68);
 }
 
 #pendu {
@@ -112,4 +122,16 @@ header {
 
     background-image: url(./spritesheet.png);
     background-size: cover;
+}
+
+.containDevine {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 1%;
+}
+
+.devine {
+    text-align: center;
+    font-size: 2em;
 }
