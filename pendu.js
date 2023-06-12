@@ -57,8 +57,10 @@ console.log(caracter);
 //* Boucle qui analyse le bouton pressé
 for (let i = 0; i < button.length; i++) {
     button[i].addEventListener("click", function () {
+
         let analyse = 0;
         caracter.forEach(function (lettre, index) {
+
             if (lettre === button[i].textContent.toLowerCase()) {
                 // remplacer l'étoile par la lettre qui correspond
                 guessWord.textContent = etoile.join(" ");
@@ -223,3 +225,18 @@ valider.addEventListener("click", function () {
 tryAgain.addEventListener("click", function () {
     window.location.reload();
 });
+
+const progressBar = document.querySelector('.progress-bar');
+let progression = 0
+
+function lerp(start, end, delta){
+    return (1-delta) * start + delta * end;
+}
+
+function progress() {
+    progression++
+    progressBar.value = lerp(progressBar.value, progression, 0.001);
+
+}
+
+idInterval = setInterval(progress, 1000/60)
