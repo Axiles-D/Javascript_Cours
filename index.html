@@ -53,64 +53,81 @@
             <h1>LE JEU DU PENDU</h1>
         </div>
     </header>
-    <div id="containImage"></div>
 
-    <div id="globalContain">
-        <div id="containUsed">
-            <p>Lettre(s) Utilisé(s) :</p>
-            <p id="usedLetter"></p>
+    <div id="jeu">
+        <h2>
+            Bienvenu dans le jeu du Pendu !
+        </h2>
+        <p>
+            Vous avez 15sec pour choisir une lettre, ainsi que 7 erreurs possibles.
+        </p>
+        <p>
+            Bonne chance !
+        </p>
+        <input type="button" value="Commencer" id="start">
+    </div>
+
+    <div id="containAll">
+
+        <div id="containTimer">
+            <p id="secondes"></p>
+            <progress value="0" max="990" class="progress-bar"></progress>
         </div>
-        <div id="containMot">
-            <h2>Mot à trouver :</h2>
-            <p id="guessWord"></p>
+
+        <div id="globalContain">
+            <div id="containUsed">
+                <p>Lettre(s) Utilisé(s) :</p>
+                <p id="usedLetter"></p>
+            </div>
+            <div id="containMot">
+                <h2>Mot à trouver :</h2>
+                <p id="guessWord"></p>
+            </div>
+            <div id="pendu"></div>
         </div>
-        <div id="pendu"></div>
-    </div>
 
-    <div class="containDevine">
-        <input type="text" class="devine" maxlength="1" size="1"/>
+        <div class="containDevine">
+            <input type="text" class="devine" maxlength="1" size="1" />
 
-        <input type="button" value="Valider" id="valider"/>
-    </div>
+            <input type="button" value="Valider" id="valider" />
+        </div>
 
 
-    <div id="containButton">
-        <button>A</button>
-        <button>Z</button>
-        <button>E</button>
-        <button>R</button>
-        <button>T</button>
-        <button>Y</button>
-        <button>U</button>
-        <button>I</button>
-        <button>O</button>
-        <button>P</button>
-        <button>Q</button>
-        <button>S</button>
-        <button>D</button>
-        <button>F</button>
-        <button>G</button>
-        <button>H</button>
-        <button>J</button>
-        <button>K</button>
-        <button>L</button>
-        <button>M</button>
-        <button>W</button>
-        <button>X</button>
-        <button>C</button>
-        <button>V</button>
-        <button>B</button>
-        <button>N</button>
-    </div>
+        <div id="containButton">
+            <button>A</button>
+            <button>Z</button>
+            <button>E</button>
+            <button>R</button>
+            <button>T</button>
+            <button>Y</button>
+            <button>U</button>
+            <button>I</button>
+            <button>O</button>
+            <button>P</button>
+            <button>Q</button>
+            <button>S</button>
+            <button>D</button>
+            <button>F</button>
+            <button>G</button>
+            <button>H</button>
+            <button>J</button>
+            <button>K</button>
+            <button>L</button>
+            <button>M</button>
+            <button>W</button>
+            <button>X</button>
+            <button>C</button>
+            <button>V</button>
+            <button>B</button>
+            <button>N</button>
+        </div>
 
-    <div id="result"></div>
+        <div id="result"></div>
 
-    <div id="containAgain">
-        <input type="button" value="Recommencer" id="recommencer" />
-    </div>
+        <div id="containAgain">
+            <input type="button" value="Recommencer" id="recommencer" />
+        </div>
 
-    <div>
-        <progress value="0" max="100" class="progress-bar"></progress>
     </div>
 </body>
 
